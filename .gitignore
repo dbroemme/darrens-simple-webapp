@@ -45,3 +45,8 @@ pom.xml.versionsBackup
 pom.xml.next
 release.properties
 dependency-reduced-pom.xml
+
+# Tomcat
+tomcat/logs
+tomcat/work
+tomcat/webapps/simple-apps
