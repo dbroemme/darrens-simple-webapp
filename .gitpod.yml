@@ -1,0 +1,4 @@
+tasks:
+  - init: mvn install
+  - command: mvn package
+  - command: tomcat/bin/catalina.sh run
