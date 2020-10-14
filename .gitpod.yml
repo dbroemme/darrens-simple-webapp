@@ -4,5 +4,6 @@ tasks:
   - command: tomcat/bin/catalina.sh run
 ports:
   - port: 8080
+    onOpen: open-preview
   - port: 8005
     onOpen: ignore
