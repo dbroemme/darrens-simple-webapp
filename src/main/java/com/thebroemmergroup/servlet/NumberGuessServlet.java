@@ -37,15 +37,19 @@ public class NumberGuessServlet extends HttpServlet {
             System.out.println("A new random number was chosen: " + randomNumber);
         } else {
             randomNumber = Integer.valueOf(strRandomNumber);
-            userGuess = Integer.valueOf(strUserGuess);
-            System.out.println("The user guessed: " + userGuess);
-            if (userGuess < randomNumber) {
-                feedback = "Your guess of " + userGuess + " is too low.<br/>Try a higher number";
-            } else if (userGuess > randomNumber) {
-                feedback = "Your guess of " + userGuess + " is too high.<br/>Try a lower number";
-            } else {
-                feedback = "You guessed it! The number was " + userGuess + ".";
-                done = true;
+            try {
+                userGuess = Integer.valueOf(strUserGuess);
+                System.out.println("The user guessed: " + userGuess);
+                if (userGuess < randomNumber) {
+                    feedback = "Your guess of " + userGuess + " is too low.<br/>Try a higher number";
+                } else if (userGuess > randomNumber) {
+                    feedback = "Your guess of " + userGuess + " is too high.<br/>Try a lower number";
+                } else {
+                    feedback = "You guessed it! The number was " + userGuess + ".";
+                    done = true;
+                }
+            } catch (NumberFormatException nfe) {
+                feedback = "Please enter a valid number.";
             }
         }
 
