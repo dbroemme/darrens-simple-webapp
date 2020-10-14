@@ -1,13 +1,13 @@
 package com.thebroemmergroup.app;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        System.out.println("At the first breakpoint...");
+ 
+        System.out.println("At the second breakpoint...");
+     
+        System.out.println("Hello World!" );
     }
 }
