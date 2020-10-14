@@ -14,7 +14,8 @@ To run the server inline within the terminal:
 ```
 tomcat/bin/catalina.sh run
 ```
-To debug the webapp, run the following commands in a termainal and browse to the webapp like normal.
+## Debugging the web application
+Run the following commands in a terminal and browse to the webapp as normal.
 Although you shouldn't have to specify the env variables, it seems not to work otherwise.
 The run the Debug (Attach) configuration.
 ```
