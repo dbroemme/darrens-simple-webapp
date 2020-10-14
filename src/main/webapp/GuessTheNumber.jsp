@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" isELIgnored="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
     "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -10,11 +10,10 @@
 <link rel="stylesheet" href="https://unpkg.com/mvp.css">
 </head>
 <body>
-<h2>Guess the Number Game</h2>
-<br/>
-<div align="center" style="margin-top: 50px;">
-<%= request.getAttribute("feedback") %>
-<br/><br/>
+<div align="center" style="margin-top: 10px;">
+<span style="color: #00264d; font-size: 150%;">Guess the Number Game</span><br/>
+<img src="./images/phone-numbers.jpg" width="250" height="167" /><br/>
+${feedback}
 <%
   Integer randomNumber = (Integer) request.getAttribute("random_number");
   Boolean isDone = (Boolean) request.getAttribute("done_flag");

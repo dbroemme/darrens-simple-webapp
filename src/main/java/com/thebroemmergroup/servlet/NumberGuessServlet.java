@@ -28,7 +28,7 @@ public class NumberGuessServlet extends HttpServlet {
         final String strUserGuess = (String) request.getParameter(GUESS_KEY);
         Integer userGuess = null;
         Integer randomNumber = null;
-        String feedback = "A number was randomly chosen between 1-10.<br/>"
+        String feedback = "A random number was chosen between 1-10.<br/>"
                         + "You have three chances to guess what it is.";
         Boolean done = false;
 
