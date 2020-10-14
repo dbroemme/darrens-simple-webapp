@@ -7,6 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Guess the Number Game</title>
+<link rel="stylesheet" href="https://unpkg.com/mvp.css">
 </head>
 <body>
 <h2>Guess the Number Game</h2>
@@ -24,7 +25,8 @@
   } else {
 %>
 <form action="NumberGuessServlet" method="post">
-    Make your guess: <input type="text" name="user_guess" /><br>
+    <label for="user_guess">Make your guess:</label>
+    <input type="text" id="user_guess" name="user_guess" /><br>
     <input type="hidden" name="random_number" value="<%= randomNumber %>" />
     <input type="submit" value="submit" />
 </form>

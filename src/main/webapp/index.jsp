@@ -1,4 +1,7 @@
 <html>
+<head>
+<link rel="stylesheet" href="https://unpkg.com/mvp.css">
+</head>
 <body>
 <h2>Simple Apps</h2>
 
