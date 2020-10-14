@@ -8,7 +8,7 @@
           "name": "Debug (Attach)",
           "request": "attach",
           "hostName": "localhost",
-          "port": 8081
+          "port": 8000
       },
     {
       "type": "java",
