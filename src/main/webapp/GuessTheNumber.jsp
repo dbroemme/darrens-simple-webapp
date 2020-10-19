@@ -18,7 +18,7 @@ ${feedback}
   Integer randomNumber = (Integer) request.getAttribute("random_number");
   Integer guessCount = (Integer) request.getAttribute("guess_count");
   if (guessCount == null) {
-      guessCount = 0;
+      guessCount = 1;
   }
   Boolean isDone = (Boolean) request.getAttribute("done_flag");
   if (isDone) {
