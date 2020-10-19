@@ -55,15 +55,17 @@ public class NumberGuessServlet extends HttpServlet {
             }
         }
 
-        final String strGuessCount = (String) request.getParameter(GUESS_COUNT_KEY);
-        if (strGuessCount != null && !done) {
-            Integer guessCount = Integer.valueOf(strGuessCount);
-            request.setAttribute(GUESS_COUNT_KEY, guessCount);
-            if (guessCount >= MAX_GUESSES) {
-                feedback = "Sorry, you have used all of your guesses. The number was "
+        String strGuessCount = (String) request.getParameter(GUESS_COUNT_KEY);
+        if (strGuessCount == null) {
+        	strGuessCount = "0";
+        }
+        Integer guessCount = Integer.valueOf(strGuessCount);
+        guessCount = guessCount + 1;
+        request.setAttribute(GUESS_COUNT_KEY, guessCount);
+        if (guessCount > MAX_GUESSES) {
+            feedback = "Sorry, you have used all of your guesses. The number was "
                     + strRandomNumber + ".";
-                done = true;
-            }
+            done = true;
         }
 
         final RequestDispatcher requestDispatcher

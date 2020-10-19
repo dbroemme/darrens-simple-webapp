@@ -18,7 +18,7 @@ ${feedback}
   Integer randomNumber = (Integer) request.getAttribute("random_number");
   Integer guessCount = (Integer) request.getAttribute("guess_count");
   if (guessCount == null) {
-      guessCount = 0;
+      guessCount = 1;
   }
   Boolean isDone = (Boolean) request.getAttribute("done_flag");
   if (isDone) {
@@ -31,7 +31,7 @@ ${feedback}
     <label for="user_guess">Make your guess:</label>
     <input type="text" id="user_guess" name="user_guess" /><br>
     <input type="hidden" name="random_number" value="<%= randomNumber %>" />
-    <input type="hidden" name="guess_count" value="<%= guessCount + 1 %>" />
+    <input type="hidden" name="guess_count" value="<%= guessCount %>" />
     <input type="submit" value="submit" />
 </form>
 <%
