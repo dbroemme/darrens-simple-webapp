@@ -15,6 +15,8 @@ public class NumberGuessServlet extends HttpServlet {
     private static final String GUESS_KEY = "user_guess";
     private static final String FEEDBACK_KEY = "feedback";
     private static final String DONE_KEY = "done_flag";
+    private static final String GUESS_COUNT_KEY = "guess_count";
+    private static final Integer MAX_GUESSES = 3;
 
 	protected void doGet(final HttpServletRequest request, final HttpServletResponse response)
             throws ServletException, IOException {
@@ -50,6 +52,17 @@ public class NumberGuessServlet extends HttpServlet {
                 }
             } catch (NumberFormatException nfe) {
                 feedback = "Please enter a valid number.";
+            }
+        }
+
+        final String strGuessCount = (String) request.getParameter(GUESS_COUNT_KEY);
+        if (strGuessCount != null && !done) {
+            Integer guessCount = Integer.valueOf(strGuessCount);
+            request.setAttribute(GUESS_COUNT_KEY, guessCount);
+            if (guessCount >= MAX_GUESSES) {
+                feedback = "Sorry, you have used all of your guesses. The number was "
+                    + strRandomNumber + ".";
+                done = true;
             }
         }
 
