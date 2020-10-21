@@ -4,7 +4,7 @@ tasks:
     name: Initialization
   - command: tomcat/bin/catalina.sh run
     name: Tomcat stdout
-  - command: gp await-port 8080 && sleep 3 && gp preview $(gp url 8080)
+  - command: gp await-port 8080 && sleep 10 && gp preview $(gp url 8080)
 ports:
   - port: 8080
     onOpen: ignore
