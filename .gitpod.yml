@@ -5,6 +5,7 @@ tasks:
   - command: tomcat/bin/catalina.sh run
     name: Tomcat stdout
   - command: gp await-port 8080 && sleep 10 && gp preview $(gp url 8080)
+    name: Preview
 ports:
   - port: 8080
     onOpen: ignore
