@@ -1,9 +1,12 @@
 tasks:
   - init: mvn install
     command: mvn package
+    name: Initialization
   - command: tomcat/bin/catalina.sh run
+    name: Tomcat stdout
+  - command: gp await-port 8080 && gp preview $(gp url 8080)
 ports:
   - port: 8080
-    onOpen: open-preview
+    onOpen: ignore
   - port: 8005
     onOpen: ignore
