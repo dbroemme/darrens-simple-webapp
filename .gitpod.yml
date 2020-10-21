@@ -6,6 +6,8 @@ tasks:
     name: Tomcat stdout
   - command: gp await-port 8080 && sleep 10 && gp preview $(gp url 8080)
     name: Preview
+  - command: echo "Run tests in this terminal"
+    name: Testing
 ports:
   - port: 8080
     onOpen: ignore
